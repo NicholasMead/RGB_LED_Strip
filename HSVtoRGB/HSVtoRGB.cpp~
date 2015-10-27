@@ -1,0 +1,29 @@
+#include <iostream>
+#include <bitset>
+#include <cmath>
+
+#typedef bitset<8> byte;
+
+byte* HSVtoRGB(int h, double s, double v)
+{
+  double c = s*v;
+
+  double x = c * (1 - ((h/60) % 2 - 1));
+
+  double m = c - v;
+
+  double _RGB[3];
+
+  if (0 <= h && h < 60) _RGB = {c,x,0};
+  else if (60 <= h && h < 120) _RGB = {x,c,0};
+  else if (120 <= h && h < 180) _RGB = {0,c,x};
+  else if (180 <= h && h < 240) _RGB = {0,x,c};
+  else if (240 <= h && h < 300) _RGB = {x,0,c};
+  else if (300 <= h && h < 360) _RGB = {c,0,x};
+}
+
+int main(int argc, char** argv)
+{
+  
+}
+
