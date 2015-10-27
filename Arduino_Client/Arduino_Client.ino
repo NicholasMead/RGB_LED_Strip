@@ -53,7 +53,7 @@ void loop() {
 
   delay (10000);
 
+  delete[] colourStart;
   delete[] colourFade;
-  delete[] colourEnd;
-
+  delete[] colourEnd;  
 }
